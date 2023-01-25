@@ -26,7 +26,7 @@ const RestaruantMenu=()=>{
     function  searchitem(searchMenu,restaurant){
       let result = {};
       Object.keys(restaurant.menu.items).map((d) => {
-       if(restaurant.menu.items[d].name.includes(searchMenu)) {
+       if(restaurant?.menu?.items[d]?.name?.includes(searchMenu)) {
           result[d] = restaurant.menu.items[d];
        }
       })

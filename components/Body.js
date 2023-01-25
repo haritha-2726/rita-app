@@ -25,11 +25,11 @@ const Body=()=>{
     const data= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&page_type=DESKTOP_WEB_LISTING");
     const json=await data.json()
     // console.log(json)
-    setfillteredRestaurant([]);
-    setallRestaurant([]);
+    setfillteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+    setallRestaurant(json?.data?.cards[2]?.data?.data?.cards);
    }
    if (!allRestaurants) return null;
-    return allRestaurants?.length !== 0 ? (
+    return allRestaurants?.length === 0 ? (
         <Shimmer/>
       ) : (
           <> 
