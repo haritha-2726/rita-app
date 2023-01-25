@@ -1,0 +1,32 @@
+{
+  "name": "namasthe-react",
+  "version": "1.0.0",
+  "description": "this is my first website",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.7.0"
+  }
+}
