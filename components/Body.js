@@ -6,6 +6,8 @@ import {Link} from "react-router-dom"
  import DynamicPage from "./DynamicPage"
  import useOnline from "../utils/useOnline"
  import useLocalStorage from "../utils/useLocalStorage"
+import { useSelector } from "react-redux"
+import { HeaderComponent } from "./Header"
  
 
 
@@ -24,6 +26,8 @@ const Body=()=>{
      const [isfav,setisfav]=useState(false)
      const [favRestaurants, setFavRestaurants] = useLocalStorage("fav");
      
+     const favitems=useSelector(store=>store.favsec.items)
+     console.log(favitems)
       
      
      useEffect(()=>{
@@ -65,6 +69,7 @@ const Body=()=>{
       }
         setisfav(!isfav)
     }
+
      
 
    if (!allRestaurants) return null;
@@ -72,8 +77,17 @@ const Body=()=>{
     return allRestaurants?.length === 0 ? (
         <Shimmer/>
       ) : (
+
           <> 
-   {/* <DynamicPage/> */}
+            {/* <div className="banner"> 
+              <div>
+                <h1 className="bannerh1">Eat home-made healthy Indian Food</h1>
+                <button>START USING RITA</button>
+                <p>already have An Account </p>
+                <p>LOG IN HERE  </p>
+              </div>
+            </div> */}
+   
          <div className="boxX">
             <input className="box" type="text" placeholder="Search for restaurant" value={searchText} 
              onChange= {(e)=>{
@@ -93,6 +107,8 @@ const Body=()=>{
             <button onClick= {()=> {showFavouriteRestaurents()}}>FAVOURITES</button>
              
           </div>
+
+           <button ><Link to="/fav">FAVOURITES{favitems.length}</Link></button>
           
        
             
@@ -100,8 +116,7 @@ const Body=()=>{
             {fillteredRestaurants.map((restaurant) => {
               return (
                 <Link to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}> 
-       
-               <RestrauntCard props={restaurant} setRestaurants={addFavourite}/></Link>
+                <RestrauntCard props={restaurant} setRestaurants={addFavourite}/></Link>
             );
            })}
         </div>

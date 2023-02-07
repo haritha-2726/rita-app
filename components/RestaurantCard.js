@@ -1,23 +1,37 @@
 
  import {IMG_CDN_URL} from "../constants"
  import { AiFillStar } from "react-icons/ai";
-const RestrauntCard = ({
-    name,
-    cuisines,
-    cloudinaryImageId,
-    slaString,
-    avgRating,
-    costForTwoString
-  }) => {
+import { useState } from "react";
+import { additem } from "../utils/favouriteslice";
+import { useDispatch } from "react-redux";
+
+const RestrauntCard = ({props,setRestaurants}) => {
+  const {name,cuisines,cloudinaryImageId,slaString,avgRating,costForTwoString}=props.data
+
+  const dispatch=useDispatch()
+  
     const buttonStyle = {
       backgroundColor: avgRating == "--" ? "#fff" : parseFloat(avgRating) < 4.0 ? "#db7c38":"#48c479",
       color : isNaN(avgRating)? "#535665" : "#fff"
     }
+    const [isfav,setisfav]=useState(false)
+    const markFavourite=(event)=>{
+      setRestaurants(props);
+      setisfav(!isfav)
+      event.preventDefault();
+    }
+
+    const handleadditem=(event)=>{
+      dispatch(additem(props))
+      event.preventDefault()
+    }
+     
     return (
       <div className="card">
-        <img 
-        src={IMG_CDN_URL+cloudinaryImageId }/>
-        <h2>{name}</h2>
+        <span className={isfav?"mark-fav-icon":""} onClick={(e)=>{markFavourite(e)}}>&#x2764;</span> 
+        <img src={IMG_CDN_URL+cloudinaryImageId }/>
+        
+        <h2 className="name">{name}</h2>
         <h3>{cuisines.join(" , ")}</h3>
         <div className="card-details"> 
         <div className="rating" style={buttonStyle}>
@@ -30,13 +44,15 @@ const RestrauntCard = ({
         <div className="dot">.</div>
         <div> 
         <h6 className="cost">{costForTwoString} </h6>
-        
-        </div>
-        </div>
        
-        <div>
-
         </div>
+         
+        </div>
+        <button onClick={(e)=>handleadditem(e)}>Add to Fav</button>
+        <div>
+       
+        </div>
+         
       </div>
       
     );

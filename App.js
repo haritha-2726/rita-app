@@ -8,14 +8,23 @@ import { createBrowserRouter ,RouterProvider,Outlet} from "react-router-dom";
  import ErrorPage from "./components/Errorpage";
  import Contact from "./components/Contact"
 import RestaurantMenu from "./components/RestaruantMenu";
+import DynamicPage from "./components/DynamicPage";
+import Help from "./components/Help";
+import Login from "./components/Login";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Favouriteitems from "./components/Favouriteiems";
 
 
  const AppLayout=()=>{
     return(
         <> 
+      
+         <Provider store={store}> 
         <HeaderComponent/>
         <Outlet/>
         <Footer/>
+        </Provider>
 
         </>
         
@@ -43,6 +52,18 @@ const appRouter=createBrowserRouter([
                 {
                     path:"/restaurant/:resId",
                     element:<RestaurantMenu  />,
+                },
+                {
+                    path:"/help",
+                    element:  <Help/>,
+                },
+                {
+                    path:"/login",
+                    element:<Login/>,
+                },
+                {
+                    path:"/fav",
+                    element:<Favouriteitems/>
                 },
             
 

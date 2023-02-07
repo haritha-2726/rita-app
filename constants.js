@@ -1,5 +1,24 @@
  export const IMG_CDN_URL ="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
-  
+ export const items_list="https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId="
+ export const GIT_HUB_URL="https://github.com/haritha-2726/rita-app"
+
+ export const FAQ=[
+  {
+    id:123,
+    title:"I want to partner my restaurant with Rita",
+    description:"partner with us send a Email:rita@food.com "
+    
+  },
+  {
+    id:124,
+    title:"Can I edit my order?",
+    description:"Your order can be edited before it reaches the restaurant. You could contact customer support team via chat or call to do so. Once order is placed and restaurant starts preparing your food, you may not edit its contents"
+    
+  }
+
+ ]
+
+ 
   export const restaurantList = [
     {
       type: "restaurant",

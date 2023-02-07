@@ -3,6 +3,8 @@ import {useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
 import Shimmer from "./Shimmer";
 import { AiFillStar } from "react-icons/ai";
+import { items_list } from "../constants";
+ 
 
 
 
@@ -16,7 +18,7 @@ const RestaruantMenu=()=>{
        getRestaurantInfo()
     },[])
     async function getRestaurantInfo(){
-        const data=await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId="+resId)
+        const data=await fetch(items_list+resId)
         const json=await data?.json()
         //  console.log(json?.data)
          setrestaurant(json?.data)
@@ -71,7 +73,7 @@ const RestaruantMenu=()=>{
                    <p>{item?.description}</p> 
                    <div className="menuimg">
                    {item?.cloudinaryImageId  && <img className="menu-item-img" src={ IMG_CDN_URL  + item?.cloudinaryImageId } alt={item?.name}/> }
-                <button className="menuaddbtn"> ADD +</button>   
+                <button className="menuaddbtn" onClick={()=>{}}> ADD +</button>   
                 
               </div>
               <hr></hr>
