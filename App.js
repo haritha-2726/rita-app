@@ -1,19 +1,19 @@
 import React, { Children } from "react";
 import  ReactDOM from "react-dom/client";
-import Footer from "./components/Footer";
-import Body from "./components/Body";
-import { Title ,HeaderComponent} from "./components/Header";
+ import Footer from "./src/components/Footer"
+import Body from "./src/components/Body";
+import { Title ,HeaderComponent} from "./src/components/Header";
 import { createBrowserRouter ,RouterProvider,Outlet} from "react-router-dom";
- import About from "./components/About";
- import ErrorPage from "./components/Errorpage";
- import Contact from "./components/Contact"
-import RestaurantMenu from "./components/RestaruantMenu";
-import DynamicPage from "./components/DynamicPage";
-import Help from "./components/Help";
-import Login from "./components/Login";
+ import About from "./src/components/About";
+ import ErrorPage from "./src/components/Errorpage";
+ import Contact from "./src/components/Contact"
+import RestaurantMenu from "./src/components/RestaruantMenu";
+import Help from "./src/components/Help";
+import Login from "./src/components/Login";
 import { Provider } from "react-redux";
 import store from "./utils/store";
-import Favouriteitems from "./components/Favouriteiems";
+import Favouriteitems from "./src/components/Favouriteiems";
+import Cart from "./src/components/Cart";
 
 
  const AppLayout=()=>{
@@ -64,6 +64,10 @@ const appRouter=createBrowserRouter([
                 {
                     path:"/fav",
                     element:<Favouriteitems/>
+                },
+                {
+                    path:"/Cart",
+                    element:<Cart/>
                 },
             
 

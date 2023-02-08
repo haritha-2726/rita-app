@@ -19,6 +19,7 @@
   "homepage": "",
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "autoprefixer": "^10.4.13",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.8.3",
     "postcss": "^8.4.21",

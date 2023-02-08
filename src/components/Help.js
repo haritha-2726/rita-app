@@ -1,6 +1,6 @@
 import { useState } from "react"
 import {HiChevronDown,HiChevronUp} from "react-icons/hi"
-import { FAQ } from "../constants"
+import { FAQ } from "../../constants"
 const Section =({question,description,isVisible,setIsVisible})=>{
   
     return(

@@ -14,9 +14,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
         }
     }
-
-
- })
+   })
 
  export  const {additem}=favouriteslice.actions
  export default favouriteslice.reducer;  

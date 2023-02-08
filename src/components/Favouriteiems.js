@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import Favitem from "./favitem";
-import { restaurantList } from "../constants";
+import { restaurantList } from "../../constants";
  
  const Favouriteitems=()=>{
     const favitems=useSelector(store=>store.favsec.items)

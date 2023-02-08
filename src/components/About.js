@@ -1,7 +1,7 @@
 import React from 'react'
 import {useEffect,useState} from "react"
  import {SiGithub} from "react-icons/si"
- import { GIT_HUB_URL } from '../constants'
+ import { GIT_HUB_URL } from '../../constants'
 // import {Component} from "react"
 
    
