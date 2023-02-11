@@ -8,7 +8,7 @@ import { additem } from "../../utils/favouriteslice";
 import { useDispatch } from "react-redux";
 
 const RestrauntCard = ({props,setRestaurants}) => {
-  const {name,cuisines,cloudinaryImageId,slaString,avgRating,costForTwoString,ribbon}=props.data
+  const {name,cuisines,cloudinaryImageId,slaString,avgRating,costForTwoString,aggregatedDiscountInfo}=props.data
   
 
   const dispatch=useDispatch()
@@ -48,10 +48,10 @@ const RestrauntCard = ({props,setRestaurants}) => {
         <div className="text-[#686b78]">.</div>
         <div> 
         <h6 className="text-[#686b78]">{costForTwoString} </h6>
+        
         </div>
-         
         </div>
-         
+        <span className="pl-1 text-sm">{aggregatedDiscountInfo?.shortDescriptionList?.[0]?.meta}</span>
         <div>
        
         </div>
