@@ -6,7 +6,7 @@ import { Title ,HeaderComponent} from "./src/components/Header";
 import { createBrowserRouter ,RouterProvider,Outlet} from "react-router-dom";
  import About from "./src/components/About";
  import ErrorPage from "./src/components/Errorpage";
- import Contact from "./src/components/Contact"
+import Offers from "./src/components/ Offers";
 import RestaurantMenu from "./src/components/RestaruantMenu";
 import Help from "./src/components/Help";
 import Login from "./src/components/Login";
@@ -46,8 +46,8 @@ const appRouter=createBrowserRouter([
                     element:<About/>,
                 },
                 {
-                    path:"/contact",
-                    element:<Contact/>,
+                    path:"/offers",
+                    element:<Offers/>,
                 },
                 {
                     path:"/restaurant/:resId",

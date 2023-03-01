@@ -9,6 +9,9 @@
         additem:(state,action)=>{
               state.items.push(action.payload)
         },
+        clearCart:(state,action)=>{
+               state.items.pop(action.payload)
+        }
          
     }
 

@@ -4,19 +4,19 @@ import { FAQ } from "../../constants"
 const Section =({question,description,isVisible,setIsVisible})=>{
   
     return(
-        <div className="section">
-            <h4>{question} 
+        <div className="flex flex-col shadow rounded-md p-2.5 m-2.5">
+            <h4 className="font-semibold text-lg text-title">{question} 
                {
               
                  isVisible?
-                 (<span onClick={()=>setIsVisible(false)}> <HiChevronUp/></span>)
+                 (<span onClick={()=>setIsVisible(false)}> <HiChevronUp className=" cursor-pointer"/></span>)
                  :
-                 (<span onClick={()=>setIsVisible(true)}> <HiChevronDown/></span>)
+                 (<span onClick={()=>setIsVisible(true)}> <HiChevronDown  className=" cursor-pointer"/></span>)
                  
                 }   
                 
              </h4> 
-            {isVisible&&<p>{description}</p>}
+            {isVisible&&<p  className="text-bio text-base">{description}</p>}
             
         </div>
     )
@@ -28,7 +28,9 @@ const Help=()=>{
    
     const [VisibleSection,setVisibleSection]=useState(" ")
     return(
-        <div>  
+        <div className="container">
+            <div className="card-container border border-red-400">
+      <h1 className="card-container-title pb-5"> FAQ</h1>  
          <Section question={"I want to partner my restaurant with Rita"} 
          description={"partner with us send a Email:rita@food.com "}
          isVisible={VisibleSection==="FAQ1"}
@@ -65,6 +67,7 @@ const Help=()=>{
          setIsVisible={()=>setVisibleSection(VisibleSection==="FAQ5"?"":"FAQ5")}
           />
 
+         </div>
          </div>
     )
 }

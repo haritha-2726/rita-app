@@ -1,15 +1,16 @@
 import { useSelector } from "react-redux";
 import Favitem from "./favitem";
-import { restaurantList } from "../../constants";
+import { Link } from "react-router-dom";
+ 
  
  const Favouriteitems=()=>{
     const favitems=useSelector(store=>store.favsec.items)
+    console.log(favitems)
      return(
-        <div> 
+        <div className="flex  gap-4"> 
      <h1>Favorite items-{favitems.length}</h1>
-     {favitems.map(items=> <Favitem  key={items.id} {...items[0]}/>)}
+      <Link> {favitems.map(items=> <Favitem  key={items.id} {...items.data}/>)}</Link>
       
-     
      </div>
      )
  }

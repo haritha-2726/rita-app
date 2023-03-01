@@ -8,14 +8,18 @@ const Cart=()=>{
 
     const cartitems=useSelector((store)=>store.cart.items)
     const totalPrice = cartitems.reduce((acc, item) => acc + ((item?.defaultPrice || item?.price) / 100), 0);
-       
+    const dispatch = useDispatch();
 
+
+    const handleClearCart = () => {
+      dispatch(clearCart());
+    };
     return(
         
       <div className='container flex flex-col'>
       <div className='flex justify-between m-5'>
       <h1 className='text-xl mt-2.5 text-title font-bold '>Cart Items</h1>
-      <button className='w-[80px] rounded-md bg-red text-black'>Clear Cart</button>
+      <button className='w-[80px] rounded-md bg-red text-black' onClick={()=>handleClearCart()}>Clear Cart</button>
 
       </div>
       <div className='flex'>

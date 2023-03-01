@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.container {
+  @apply mt-24 min-h-[77vh] min-w-full;
+}
+
+.card-container {
+  @apply px-2.5 py-5 m-4 rounded-md overflow-hidden shadow  bg-white;
+}
+.card-container-title {
+  @apply text-3xl leading-4 justify-center   text-center font-bold;
+}
+.btn {
+  @apply h-[30px]  rounded-md outline-none border   text-base;
+}
  
     
 /* * {

@@ -2,6 +2,7 @@
  import {IMG_CDN_URL} from "../../constants"
  import { AiFillStar,AiFillHeart } from "react-icons/ai";
  import {CiHeart} from "react-icons/ci"
+ import {TbDiscount2} from  "react-icons/tb"
  
 import { useState } from "react";
 import { additem } from "../../utils/favouriteslice";
@@ -30,12 +31,10 @@ const RestrauntCard = ({props,setRestaurants}) => {
     }
      
     return (
-      <div className="hover:border-gray-300 hover:border-[2px] border-radius basis-[250px]"> 
+      <div className="hover:border-red-100  transition-transform  hover:scale-110  hover:border-[2px] border-radius basis-[250px]"> 
       <button onClick={(e)=>handleadditem(e)}> <CiHeart/></button>  
-        
         <img src={IMG_CDN_URL+cloudinaryImageId }/>
-        
-        <h2 className="name">{name}</h2>
+        <h2 >{name}</h2>
         <h3 className="text-[#686b78] text-xs">{cuisines.join(" , ")}</h3>
         <div className="flex mt-4 justify-between items-center text-xs pb-2.5 font-semibold mob:flex-col mob:items-start"> 
         <div className="flex items-center h-5 w-11 gap-1 py-0 px-1" style={buttonStyle}>
@@ -51,7 +50,7 @@ const RestrauntCard = ({props,setRestaurants}) => {
         
         </div>
         </div>
-        <span className="pl-1 text-sm">{aggregatedDiscountInfo?.shortDescriptionList?.[0]?.meta}</span>
+        <span className="pl-1 text-sm text-amber-800 flex items-center gap-1">< TbDiscount2 className="text-xl"/>{aggregatedDiscountInfo?.shortDescriptionList?.[0]?.meta}</span>
         <div>
        
         </div>

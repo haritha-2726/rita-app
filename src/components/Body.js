@@ -25,7 +25,7 @@ const Body=()=>{
       
      
      const favitems=useSelector(store=>store.favsec.items)
-     console.log(favitems)
+    //  console.log(favitems)
       
      
      useEffect(()=>{
@@ -34,7 +34,7 @@ const Body=()=>{
     async function getRestaurents(){
     const data= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&page_type=DESKTOP_WEB_LISTING");
     const json=await data.json()
-    console.log(json)
+    // console.log(json)
     setfillteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     setallRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     }
@@ -66,7 +66,7 @@ const Body=()=>{
              
          </div> 
                    
-               <div className=" flex flex-wrap gap-5 justify-center">
+               <div className="flex flex-wrap gap-5 justify-center">
                    {fillteredRestaurants.map((restaurant) => {
                      return (
                         <Link className="basis-[250px] p-2.5 mb-2.5 mob:basis-[150px]" to={"/restaurant/"+restaurant.data.id} key={restaurant.data.id}> 
